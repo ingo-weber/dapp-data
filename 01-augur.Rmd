@@ -1,2 +1,37 @@
 # Augur
 
+- **DApp Homepage:** <https://augur.net>
+- **DApp Source Code:** <https://github.com/AugurProject/augur-core>
+- **ELF Script:** [Augur.ethql](./elf-scripts/Augur.ethql)
+- **Event Log:** TODO
+- **Process:** [Augur.bpmn](./data/Augur.bpmn)
+
+Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain.
+Augur’s white paper characterizes the mechanics of a prediction and betting market: “individuals can speculate on the outcomes of future events; those who forecast the outcome correctly win money, and those who forecast incorrectly lose
+money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.
+
+## Data Overview
+
+### Process Notion
+
+### Trace Attributes
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| universe | string | |
+| description | string | |
+| extraInfo | string | |
+| type | string | |
+| minPrice | int | |
+| maxPrice | int | |
+| blockNumber | int | |
+| time:timestamp | date | |
+
+### Event Attributes
+
+| Attribute | Type | Description | Events |
+| --- | --- | --- | --- |
+
+
+
+## Preliminary Analysis

@@ -68,8 +68,20 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li><a href="./">A Collection of DApp Event Logs</a></li>
+
+<li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
-<li class="chapter" data-level="2" data-path="augur.html"><a href="augur.html"><i class="fa fa-check"></i><b>2</b> Augur</a></li>
+<li class="chapter" data-level="2" data-path="augur.html"><a href="augur.html"><i class="fa fa-check"></i><b>2</b> Augur</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="augur.html"><a href="augur.html#data-overview"><i class="fa fa-check"></i><b>2.1</b> Data Overview</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="augur.html"><a href="augur.html#process-notion"><i class="fa fa-check"></i><b>2.1.1</b> Process Notion</a></li>
+<li class="chapter" data-level="2.1.2" data-path="augur.html"><a href="augur.html#trace-attributes"><i class="fa fa-check"></i><b>2.1.2</b> Trace Attributes</a></li>
+<li class="chapter" data-level="2.1.3" data-path="augur.html"><a href="augur.html#event-attributes"><i class="fa fa-check"></i><b>2.1.3</b> Event Attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="augur.html"><a href="augur.html#preliminary-analysis"><i class="fa fa-check"></i><b>2.2</b> Preliminary Analysis</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="forsage.html"><a href="forsage.html"><i class="fa fa-check"></i><b>3</b> Forsage</a></li>
 <li class="chapter" data-level="4" data-path="cryptokitties.html"><a href="cryptokitties.html"><i class="fa fa-check"></i><b>4</b> CryptoKitties</a></li>
 <li class="chapter" data-level="5" data-path="chickenhunt.html"><a href="chickenhunt.html"><i class="fa fa-check"></i><b>5</b> ChickenHunt</a></li>
@@ -92,7 +104,95 @@
             <section class="normal" id="section-">
 <div id="augur" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Augur</h1>
+<ul>
+<li><strong>DApp Homepage:</strong> <a href="https://augur.net" class="uri">https://augur.net</a></li>
+<li><strong>DApp Source Code:</strong> <a href="https://github.com/AugurProject/augur-core" class="uri">https://github.com/AugurProject/augur-core</a></li>
+<li><strong>ELF Script:</strong> <a href="./elf-scripts/Augur.ethql">Augur.ethql</a></li>
+<li><strong>Event Log:</strong> <a href="./data/Augur.xes">Augur.xes</a></li>
+<li><strong>Process:</strong> <a href="./data/Augur.bpmn">Augur.bpmn</a></li>
+</ul>
+<p>Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain.
+Augur’s white paper characterizes the mechanics of a prediction and betting market: “individuals can speculate on the outcomes of future events; those who forecast the outcome correctly win money, and those who forecast incorrectly lose
+money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.</p>
+<div id="data-overview" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Data Overview</h2>
+<div id="process-notion" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Process Notion</h3>
+</div>
+<div id="trace-attributes" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Trace Attributes</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>universe</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>extraInfo</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>minPrice</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>maxPrice</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>blockNumber</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>time:timestamp</td>
+<td>date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="event-attributes" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Event Attributes</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th>Events</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+<div id="preliminary-analysis" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Preliminary Analysis</h2>
 
+</div>
 </div>
             </section>
 
@@ -143,7 +243,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
