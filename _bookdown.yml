@@ -1,0 +1,10 @@
+book_filename: "bookdown-demo"
+output_dir: "docs"
+language:
+  ui:
+    chapter_name: ""
+output:
+  html_document:
+    chapter_sections: false
+    number_sections: false
+delete_merged_file: true
