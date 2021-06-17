@@ -11,3 +11,11 @@ description: "This is a minimal example of using the bookdown package to write a
 
 # Overview
 
+This is a repository of event logs from *decentralized applications* (DApps) deployed on public blockchain networks. 
+All datasets included in this collection provide logs in the [IEEE XES standard](https://www.tf-pm.org/resources/xes-standard/about-xes).
+At the moment, logs for the following DApps:
+
+- [Augur](#augur)
+- [Forsage](#forsage)
+- [CryptoKitties](#cryptokitties)
+- [ChickenHunt](#chickenhunt)

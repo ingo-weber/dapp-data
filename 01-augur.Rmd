@@ -1,4 +1,4 @@
-# Augur
+# Augur {#augur}
 
 - **DApp Homepage:** <https://augur.net>
 - **DApp Source Code:** <https://github.com/AugurProject/augur-core>
@@ -29,7 +29,7 @@ money.” As a betting market organized on Ethereum, the developers claim that A
 
 ### Event Attributes
 
-| Attribute | Type | Description | Events |
+| Attribute | Type | Description | Event Classes |
 | --- | --- | --- | --- |
 
 
