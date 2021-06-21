@@ -6,16 +6,26 @@ documentclass: book
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "This is a collection of public event logs from blockchain-based applications."
 ---
 
-# Overview
+# Overview {-}
 
-This is a repository of event logs from *decentralized applications* (DApps) deployed on public blockchain networks. 
-All datasets included in this collection provide logs in the [IEEE XES standard](https://www.tf-pm.org/resources/xes-standard/about-xes).
-At the moment, logs for the following DApps:
+This is a repository of event logs of *decentralized applications* (DApps) deployed on public blockchain networks. 
+The event logs contain historic information about events that occurred during the execution of the DApps.
+Currently, the collection contains logs for the following Ethereum-based DApps:
 
-- [Augur](#augur)
-- [Forsage](#forsage)
-- [CryptoKitties](#cryptokitties)
-- [ChickenHunt](#chickenhunt)
+- [Augur](#augur): a prediction and betting marketplace;
+- [Forsage](#forsage): an investment application, which turns out to be a PONZI scheme;
+- [CryptoKitties](#cryptokitties): a game where virtual cats can be bred and traded as assets; and
+- [ChickenHunt](#chickenhunt): a game for hunting chickens.
+
+All event logs from this collection follow the [IEEE XES standard](https://www.tf-pm.org/resources/xes-standard/about-xes) and were extracted using the [Ethereum Logging Framework](https://github.com/ChrisKlinkmueller/Ethereum-Logging-Framework/) (ELF).
+In addition to the event log data, this website provides a description of the data in the event logs, pointers to DApp documentations, links to ELF scripts used for data extraction, and insights obtained from a preliminary analyses for each DApp event log.
+
+This collection is part of our work on process mining for blockchain-based applications.
+Details can be found in the following publications:
+
+- C. Klinkmüller, A. Ponomarev, A.B. Tran, I. Weber, W. van der Aalst: Mining blockchain processes (2019): Extracting process mining data from blockchain applications. In: International Conference on Business Process Management (Blockchain Forum).
+- C. Klinkmüller, I. Weber, A. Ponomarev, A.B. Tran, W. van der Aalst (2019): Efficient logging for blockchain applications. <https://arxiv.org/abs/2001.10281>
+- R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): Process Mining on Blockchain Data: A Case Study of Augur. In: International Conference on Business Process Management. 
