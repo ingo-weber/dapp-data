@@ -1,0 +1,178 @@
+// TODO: set up connection
+connect("ws://localhost:8546/");
+// connectIpc("/home/ethuser/.local/share/openethereum/jsonrpc.ipc");
+
+// TODO: set up output folder
+setOutputFolder("./test_output/cryptokitties");
+
+string forsage = "forsageLog";
+
+// TODO: check the upper block range limit, currently at 12000000
+BLOCKS (4605167) (12243999) {    
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        Registration(address indexed user, address indexed referrer, uint indexed userId, uint referrerId)
+    ){
+		EMIT XES TRACE (forsage)(user)(
+            user as xs:string concept:name            
+        );
+
+        EMIT XES EVENT (forsage)(user)()(
+            "Register As User" as xs:string concept:name,
+            referrer as xs:string referred,
+            userId as xs:int userId,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+        EMIT XES EVENT (forsage)(referrer)()(
+            "Refer New User" as xs:string concept:name,
+            user as xs:string user,
+            userId as xs:int userId,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+    
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        Reinvest(address indexed user, address indexed currentReferrer, address indexed caller, uint8 matrix, uint8 level)
+    ){
+        IF (matrix == 1) {
+            EMIT XES EVENT (forsage)(user)()(
+                "Reinvest Matrix-1" as xs:string concept:name, 
+                level as xs:int level,
+                currentReferrer as xs:string currentReferrer,
+                caller as xs:string caller,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+        IF (matrix == 2) {
+            EMIT XES EVENT (forsage)(user)()(
+                "Reinvest Matrix-2" as xs:string concept:name, 
+                level as xs:int level,
+                currentReferrer as xs:string currentReferrer,
+                caller as xs:string caller,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+    }
+
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        Upgrade(address indexed user, address indexed referrer, uint8 matrix, uint8 level)
+    ){
+        IF (matrix == 1) {
+            EMIT XES EVENT (forsage)(user)()(
+                "Upgrade Matrix-1" as xs:string concept:name, 
+                level as xs:int level,
+                referrer as xs:string referrer,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+
+        IF (matrix == 2) {
+            EMIT XES EVENT (forsage)(user)()(
+                "Upgrade Matrix-2" as xs:string concept:name, 
+                level as xs:int level,
+                referrer as xs:string referrer,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+    }
+
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        NewUserPlace(address indexed user, address indexed referrer, uint8 matrix, uint8 level, uint8 place)
+    ){
+        IF (matrix == 1) {
+            EMIT XES EVENT (forsage)(user)()(
+                "New User-Place Matrix-1" as xs:string concept:name, 
+                referrer as xs:string referrer,
+                level as xs:int level, 
+                place as xs:int place,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+        IF (matrix == 2) {
+            EMIT XES EVENT (forsage)(user)()(
+                "New User-Place Matrix-2" as xs:string concept:name, 
+                referrer as xs:string referrer,
+                level as xs:int level, 
+                place as xs:int place,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+    }
+
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        MissedEthReceive(address indexed receiver, address indexed from, uint8 matrix, uint8 level)
+    ){
+        IF (matrix == 1) {
+            EMIT XES EVENT (forsage)(receiver)()(
+                "Missed Eth-Receive Matrix-1" as xs:string concept:name, 
+                from as xs:string from,
+                level as xs:int level,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+        IF (matrix == 2) {
+            EMIT XES EVENT (forsage)(receiver)()(
+                "Missed Eth-Receive Matrix-2" as xs:string concept:name, 
+                from as xs:string from,
+                level as xs:int level,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+    }
+
+    LOG ENTRIES (0x5acc84a3e955bdd76467d3348077d003f00ffb97) (
+        SentExtraEthDividends(address indexed from, address indexed receiver, uint8 matrix, uint8 level)
+    ){
+        IF (matrix == 1) {
+            EMIT XES EVENT (forsage)(receiver)()(
+                "Received Extra Eth-Dividends Matrix-1" as xs:string concept:name, 
+                from as xs:string from,
+                level as xs:int level,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+        IF (matrix == 2) {
+            EMIT XES EVENT (forsage)(receiver)()(
+                "Recieved Extra Eth-Dividends Matrix-2" as xs:string concept:name, 
+                from as xs:string from,
+                level as xs:int level,
+                block.timestamp as xs:date time:timestamp,
+                block.number as xs:int blockNumber,
+                tx.transactionIndex as xs:int transactionIndex,
+                log.logIndex as xs:int logIndex
+            );
+        }
+    }
+}

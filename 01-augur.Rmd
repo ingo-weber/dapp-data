@@ -12,26 +12,49 @@ money.” As a betting market organized on Ethereum, the developers claim that A
 
 ## Data Overview
 
-### Process Notion
+Each trace in the Augur log captures the events that occur in relation to a specific betting market.
+Each trace has the following attributes:
 
-### Trace Attributes
+- ``marketType`` (xs:string) -
+- ``description`` (xs:string) - 
+- ``minPrice`` (xs:int) - 
+- ``maxPrice`` (xs:int) -
+- ``blockNumber`` (xs:int) -
+- ``time:timestamp`` (xs:date) -
+- ``extraInfo`` (xs:string) -
 
-| Attribute | Type | Description |
-| --- | --- | --- |
-| universe | string | |
-| description | string | |
-| extraInfo | string | |
-| type | string | |
-| minPrice | int | |
-| maxPrice | int | |
-| blockNumber | int | |
-| time:timestamp | date | |
+In addition, each event has a set of standard attributes:
 
-### Event Attributes
+- ``concept:name`` (xs:string) - The class of the event
+- ``time:timestamp`` (xs:date) - The timestamp of the block that included the event
+- ``lifecycle:transition`` (xs:string) - the lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
+- ``blockNumber`` (xs:int) - The number of the block that included the event
+- ``txIndex`` (xs:int) - The index of the transaction that included the event
+- ``logIndex`` (xs:int) - The index of the log that included the event
+- ``gasUsed`` (xs:int) - The amount of gas that was consumed by the transaction
+- ``gasPaid`` (xs:int) - The amount of Ether that was paid for the execution of the transaction
 
-| Attribute | Type | Description | Event Classes |
-| --- | --- | --- | --- |
+The following events can occur during a market's lifetime: 
 
-
+- *create market* -
+- *purchase complete sets* -
+- *submit initial report* -
+- *create dispute* -
+- *contribute to dispute* -
+- *redeem dispute crowdsourcer* -
+- *complete dispute* -
+- *finalize market* -
+- *claim trading proceeds* -
+- *redeem as initial reporter* -
+- *transfer market* -
 
 ## Preliminary Analysis
+
+We conducted a case study on process mining for data extracted from Augur in [1].  
+To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance  checking and performance analyses. 
+In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process.
+An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
+
+**References**
+
+[1] R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): “Process Mining on Blockchain Data: A Case Study of Augur”. In: International Conference on Business Process Management.

@@ -74,12 +74,7 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="1" data-path="augur.html"><a href="augur.html"><i class="fa fa-check"></i><b>1</b> Augur</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="augur.html"><a href="augur.html#data-overview"><i class="fa fa-check"></i><b>1.1</b> Data Overview</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="augur.html"><a href="augur.html#process-notion"><i class="fa fa-check"></i><b>1.1.1</b> Process Notion</a></li>
-<li class="chapter" data-level="1.1.2" data-path="augur.html"><a href="augur.html#trace-attributes"><i class="fa fa-check"></i><b>1.1.2</b> Trace Attributes</a></li>
-<li class="chapter" data-level="1.1.3" data-path="augur.html"><a href="augur.html#event-attributes"><i class="fa fa-check"></i><b>1.1.3</b> Event Attributes</a></li>
-</ul></li>
+<li class="chapter" data-level="1.1" data-path="augur.html"><a href="augur.html#data-overview"><i class="fa fa-check"></i><b>1.1</b> Data Overview</a></li>
 <li class="chapter" data-level="1.2" data-path="augur.html"><a href="augur.html#preliminary-analysis"><i class="fa fa-check"></i><b>1.2</b> Preliminary Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="forsage.html"><a href="forsage.html"><i class="fa fa-check"></i><b>2</b> Forsage</a>
@@ -128,81 +123,51 @@ Augur’s white paper characterizes the mechanics of a prediction and betting ma
 money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.</p>
 <div id="data-overview" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Data Overview</h2>
-<div id="process-notion" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Process Notion</h3>
-</div>
-<div id="trace-attributes" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Trace Attributes</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>universe</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>description</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>extraInfo</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>minPrice</td>
-<td>int</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>maxPrice</td>
-<td>int</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>blockNumber</td>
-<td>int</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>time:timestamp</td>
-<td>date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="event-attributes" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Event Attributes</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-<th>Event Classes</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-</div>
+<p>Each trace in the Augur log captures the events that occur in relation to a specific betting market.
+Each trace has the following attributes:</p>
+<ul>
+<li><code>marketType</code> (xs:string) -</li>
+<li><code>description</code> (xs:string) -</li>
+<li><code>minPrice</code> (xs:int) -</li>
+<li><code>maxPrice</code> (xs:int) -</li>
+<li><code>blockNumber</code> (xs:int) -</li>
+<li><code>time:timestamp</code> (xs:date) -</li>
+<li><code>extraInfo</code> (xs:string) -</li>
+</ul>
+<p>In addition, each event has a set of standard attributes:</p>
+<ul>
+<li><code>concept:name</code> (xs:string) - The class of the event</li>
+<li><code>time:timestamp</code> (xs:date) - The timestamp of the block that included the event</li>
+<li><code>lifecycle:transition</code> (xs:string) - the lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
+<li><code>blockNumber</code> (xs:int) - The number of the block that included the event</li>
+<li><code>txIndex</code> (xs:int) - The index of the transaction that included the event</li>
+<li><code>logIndex</code> (xs:int) - The index of the log that included the event</li>
+<li><code>gasUsed</code> (xs:int) - The amount of gas that was consumed by the transaction</li>
+<li><code>gasPaid</code> (xs:int) - The amount of Ether that was paid for the execution of the transaction</li>
+</ul>
+<p>The following events can occur during a market’s lifetime:</p>
+<ul>
+<li><em>create market</em> -</li>
+<li><em>purchase complete sets</em> -</li>
+<li><em>submit initial report</em> -</li>
+<li><em>create dispute</em> -</li>
+<li><em>contribute to dispute</em> -</li>
+<li><em>redeem dispute crowdsourcer</em> -</li>
+<li><em>complete dispute</em> -</li>
+<li><em>finalize market</em> -</li>
+<li><em>claim trading proceeds</em> -</li>
+<li><em>redeem as initial reporter</em> -</li>
+<li><em>transfer market</em> -</li>
+</ul>
 </div>
 <div id="preliminary-analysis" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Preliminary Analysis</h2>
+<p>We conducted a case study on process mining for data extracted from Augur in [1].<br />
+To this end, we used process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses.
+In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process.
+An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development.</p>
+<p><strong>References</strong></p>
+<p>[1] R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): “Process Mining on Blockchain Data: A Case Study of Augur”. In: International Conference on Business Process Management.</p>
 
 </div>
 </div>

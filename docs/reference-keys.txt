@@ -1,8 +1,5 @@
 augur
 data-overview
-process-notion
-trace-attributes
-event-attributes
 preliminary-analysis
 forsage
 data-overview-1

@@ -25,7 +25,7 @@ In addition, each event has a set of standard attributes:
 - ``time:timestamp`` (xs:date) - The timestamp of the block that included the event
 - ``lifecycle:transition`` (xs:string) - the lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
 - ``blockNumber`` (xs:int) - The number of the block that included the event
-- ``transactionIndex`` (xs:int) - The index of the transaction that included the event ,
+- ``transactionIndex`` (xs:int) - The index of the transaction that included the event
 - ``logIndex`` (xs:int) - The index of the log that included the event
 
 The following events can occur during the a player's game: 
