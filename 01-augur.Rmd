@@ -3,7 +3,7 @@
 - **DApp Homepage:** <https://augur.net>
 - **DApp Source Code:** <https://github.com/AugurProject/augur-core>
 - **ELF Script:** [Augur.ethql](./elf-scripts/Augur.ethql)
-- **Event Log:** TODO
+- **Event Log:** [Augur.xes](./data/Augur.xes)
 - **Process:** [Augur.bpmn](./data/Augur.bpmn)
 
 Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain.
