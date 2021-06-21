@@ -132,16 +132,16 @@ Through such investments, players also earn shares which they can cash out or tr
 <p>Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game.
 Each trace has the following attributes:</p>
 <ul>
-<li><code>concept:name</code> (xs:string) - the address of the ChickenHunt player</li>
+<li><code>concept:name</code> (xs:string) - The address of the ChickenHunt player</li>
 </ul>
 <p>In addition, each event has a set of standard attributes:</p>
 <ul>
-<li><code>concept:name</code> (xs:string) - the class of the event</li>
-<li><code>time:timestamp</code> (xs:date) - the timestamp of the block that included the event</li>
+<li><code>concept:name</code> (xs:string) - The class of the event</li>
+<li><code>time:timestamp</code> (xs:date) - The timestamp of the block that included the event</li>
 <li><code>lifecycle:transition</code> (xs:string) - the lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
-<li><code>blockNumber</code> (xs:int) - the number of the block that included the event</li>
-<li><code>transactionIndex</code> (xs:int) - the index of the transaction that included the event ,</li>
-<li><code>logIndex</code> (xs:int) - the index of the log that included the event</li>
+<li><code>blockNumber</code> (xs:int) - The number of the block that included the event</li>
+<li><code>transactionIndex</code> (xs:int) - The index of the transaction that included the event ,</li>
+<li><code>logIndex</code> (xs:int) - The index of the log that included the event</li>
 </ul>
 <p>The following events can occur during the a player’s game:</p>
 <ul>

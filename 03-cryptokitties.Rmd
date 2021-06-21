@@ -20,53 +20,53 @@ A CryptoKitty is represented by an identifier and its DNA, from which its featur
 Each trace in the CryptoKitties log captures the events from the life of a single CryptoKitty.
 Each trace has the following attributes:
 
-- ``concept:name`` (xs:string) - the identifier of the CryptoKitty
-- ``matronId`` (xs:string) - the identifier of the CryptoKitty's matron
-- ``sireId`` (xs:string) - the identifier of the CryptoKitty's sire
-- ``genes`` (xs:int) - the CryptoKitty's DNA
+- ``concept:name`` (xs:string) - The identifier of the CryptoKitty
+- ``matronId`` (xs:string) - The identifier of the CryptoKitty's matron
+- ``sireId`` (xs:string) - The identifier of the CryptoKitty's sire
+- ``genes`` (xs:int) - The CryptoKitty's DNA
 
 In addition, each event has a set of standard attributes:
 
-- ``concept:name`` (xs:string) - the class of the event
-- ``time:timestamp`` (xs:date) - the timestamp of the block that included the event
-- ``lifecycle:transition`` (xs:string) - the lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
-- ``blockNumber`` (xs:int) - the number of the block that included the event
-- ``transactionIndex`` (xs:int) - the index of the transaction that included the event ,
-- ``logIndex`` (xs:int) - the number of the block that included the event
+- ``concept:name`` (xs:string) - The class of the event
+- ``time:timestamp`` (xs:date) - The timestamp of the block that included the event
+- ``lifecycle:transition`` (xs:string) - The lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
+- ``blockNumber`` (xs:int) - The number of the block that included the event
+- ``transactionIndex`` (xs:int) - The index of the transaction that included the event ,
+- ``logIndex`` (xs:int) - The index of the log that included the event
 
 The following events can occur during the life of a CrypotKitty: 
 
-- **Is Born** - The birth of a CryptoKitty
-  - ``owner`` (xs:string) - the owner of the CryptoKitty
-- **Conceive as Matron** - The CryptoKitty becomes pregnant
-  - ``sireId`` (xs:string) - the id of the CryptoKitty that is the sire
-- **Conceive as Sire** - The CryptoKitty contributes to the pregnancy of a matron
-  - ``matronId`` (xs:string) - the id of the CryptoKitty that is the matron
-- **Give Birth as Matron** - The CryptoKitty becomes the matron of another CryptoKitty
-  - ``kittyId`` (xs:string) - the id of the CryptoKitty that was born
-  - ``sireId`` (xs:string) - the id of the CryptoKitty that is the sire
-- **Give Birth as Sire** - The CryptoKitty becomes the sire of another CryptoKitty
-  - ``kittyId`` (xs:string) - the id of the CryptoKitty that was born
-  - ``matronId`` (xs:string) - the id of the CryptoKitty that is the matron
-- **Put Up for Sale Auction** - The owner wants to sell the CryptoKitty
-  - ``startingPrice`` (xs:int) - the price (in wei) at the beginning of the auction
-  - ``endingPrice`` (xs:int) - the price (in wei)  at which the auction will end
-  - ``duration`` (xs:int) - the duration for which the auction is running
-- **Complete Sale Auction** - The sale auction is successfully completed
-  - ``totalPrice`` (xs:int) - the price paid for the CryptoKitty
-  - ``winner`` (xs:string) - the new owner of the CryptoKitty
-- **Cancel Sale Auction** - The sale auction is aborted
-- **Put Up for Siring Auction** - The owner offers his or her CryptoKitty for siring
-  - ``startingPrice`` (xs:int) - the price (in wei) at the beginning of the auction
-  - ``endingPrice`` (xs:int) - the price (in wei)  at which the auction will end
-  - ``duration`` (xs:int) - the duration for which the auction is running
-- **Complete Siring Auction** - The siring auction is successfully completed
-  - ``totalPrice`` (xs:int) - the price paid for the CryptoKitty
-  - ``winner`` (xs:string) - the owner of the matron who is looking for a sire 
-- **Cancel Siring Auction** - The siring auction is aborted
-- **Is Transferred** - The ownership of a CryptoKitty changes
-  - ``from`` (xs:string) - the previous owner of the CryptoKitty
-  - ``to`` (xs:string) - the new owner of the CryptoKitty
+- *Is Born* - The birth of a CryptoKitty
+  - ``owner`` (xs:string) - The owner of the CryptoKitty
+- *Conceive as Matron* - The CryptoKitty becomes pregnant
+  - ``sireId`` (xs:string) - The id of the CryptoKitty that is the sire
+- *Conceive as Sire* - The CryptoKitty contributes to the pregnancy of a matron
+  - ``matronId`` (xs:string) - The id of the CryptoKitty that is the matron
+- *Give Birth as Matron* - The CryptoKitty becomes the matron of another CryptoKitty
+  - ``kittyId`` (xs:string) - The id of the CryptoKitty that was born
+  - ``sireId`` (xs:string) - The id of the CryptoKitty that is the sire
+- *Give Birth as Sire* - The CryptoKitty becomes the sire of another CryptoKitty
+  - ``kittyId`` (xs:string) - The id of the CryptoKitty that was born
+  - ``matronId`` (xs:string) - The id of the CryptoKitty that is the matron
+- *Put Up for Sale Auction* - The owner wants to sell the CryptoKitty
+  - ``startingPrice`` (xs:int) - The price (in wei) at the beginning of the auction
+  - ``endingPrice`` (xs:int) - The price (in wei)  at which the auction will end
+  - ``duration`` (xs:int) - The duration for which the auction is running
+- *Complete Sale Auction* - The sale auction is successfully completed
+  - ``totalPrice`` (xs:int) - The price paid for the CryptoKitty
+  - ``winner`` (xs:string) - The new owner of the CryptoKitty
+- *Cancel Sale Auction* - The sale auction is aborted
+- *Put Up for Siring Auction* - The owner offers his or her CryptoKitty for siring
+  - ``startingPrice`` (xs:int) - The price (in wei) at the beginning of the auction
+  - ``endingPrice`` (xs:int) - The price (in wei)  at which the auction will end
+  - ``duration`` (xs:int) - The duration for which the auction is running
+- *Complete Siring Auction* - The siring auction is successfully completed
+  - ``totalPrice`` (xs:int) - The price paid for the CryptoKitty
+  - ``winner`` (xs:string) - The owner of the matron who is looking for a sire 
+- *Cancel Siring Auction* - The siring auction is aborted
+- *Is Transferred* - The ownership of a CryptoKitty changes
+  - ``from`` (xs:string) - The previous owner of the CryptoKitty
+  - ``to`` (xs:string) - The new owner of the CryptoKitty
 
 
 ## Preliminary Analysis

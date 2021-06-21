@@ -94,12 +94,7 @@
 </ul></li>
 <li class="chapter" data-level="4" data-path="chickenhunt.html"><a href="chickenhunt.html"><i class="fa fa-check"></i><b>4</b> ChickenHunt</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="chickenhunt.html"><a href="chickenhunt.html#data-overview-3"><i class="fa fa-check"></i><b>4.1</b> Data Overview</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="chickenhunt.html"><a href="chickenhunt.html#process-notion-1"><i class="fa fa-check"></i><b>4.1.1</b> Process Notion</a></li>
-<li class="chapter" data-level="4.1.2" data-path="chickenhunt.html"><a href="chickenhunt.html#trace-attributes-1"><i class="fa fa-check"></i><b>4.1.2</b> Trace Attributes</a></li>
-<li class="chapter" data-level="4.1.3" data-path="chickenhunt.html"><a href="chickenhunt.html#event-attributes-1"><i class="fa fa-check"></i><b>4.1.3</b> Event Attributes</a></li>
-</ul></li>
+<li class="chapter" data-level="4.1" data-path="chickenhunt.html"><a href="chickenhunt.html#data-overview-3"><i class="fa fa-check"></i><b>4.1</b> Data Overview</a></li>
 <li class="chapter" data-level="4.2" data-path="chickenhunt.html"><a href="chickenhunt.html#preliminary-analysis-3"><i class="fa fa-check"></i><b>4.2</b> Preliminary Analysis</a></li>
 </ul></li>
 </ul>
@@ -141,72 +136,72 @@ A CryptoKitty is represented by an identifier and its DNA, from which its featur
 <p>Each trace in the CryptoKitties log captures the events from the life of a single CryptoKitty.
 Each trace has the following attributes:</p>
 <ul>
-<li><code>concept:name</code> (xs:string) - the identifier of the CryptoKitty</li>
-<li><code>matronId</code> (xs:string) - the identifier of the CryptoKitty’s matron</li>
-<li><code>sireId</code> (xs:string) - the identifier of the CryptoKitty’s sire</li>
-<li><code>genes</code> (xs:int) - the CryptoKitty’s DNA</li>
+<li><code>concept:name</code> (xs:string) - The identifier of the CryptoKitty</li>
+<li><code>matronId</code> (xs:string) - The identifier of the CryptoKitty’s matron</li>
+<li><code>sireId</code> (xs:string) - The identifier of the CryptoKitty’s sire</li>
+<li><code>genes</code> (xs:int) - The CryptoKitty’s DNA</li>
 </ul>
 <p>In addition, each event has a set of standard attributes:</p>
 <ul>
-<li><code>concept:name</code> (xs:string) - the class of the event</li>
-<li><code>time:timestamp</code> (xs:date) - the timestamp of the block that included the event</li>
-<li><code>lifecycle:transition</code> (xs:string) - the lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
-<li><code>blockNumber</code> (xs:int) - the number of the block that included the event</li>
-<li><code>transactionIndex</code> (xs:int) - the index of the transaction that included the event ,</li>
-<li><code>logIndex</code> (xs:int) - the number of the block that included the event</li>
+<li><code>concept:name</code> (xs:string) - The class of the event</li>
+<li><code>time:timestamp</code> (xs:date) - The timestamp of the block that included the event</li>
+<li><code>lifecycle:transition</code> (xs:string) - The lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
+<li><code>blockNumber</code> (xs:int) - The number of the block that included the event</li>
+<li><code>transactionIndex</code> (xs:int) - The index of the transaction that included the event ,</li>
+<li><code>logIndex</code> (xs:int) - The index of the log that included the event</li>
 </ul>
 <p>The following events can occur during the life of a CrypotKitty:</p>
 <ul>
-<li><strong>Is Born</strong> - The birth of a CryptoKitty
+<li><em>Is Born</em> - The birth of a CryptoKitty
 <ul>
-<li><code>owner</code> (xs:string) - the owner of the CryptoKitty</li>
+<li><code>owner</code> (xs:string) - The owner of the CryptoKitty</li>
 </ul></li>
-<li><strong>Conceive as Matron</strong> - The CryptoKitty becomes pregnant
+<li><em>Conceive as Matron</em> - The CryptoKitty becomes pregnant
 <ul>
-<li><code>sireId</code> (xs:string) - the id of the CryptoKitty that is the sire</li>
+<li><code>sireId</code> (xs:string) - The id of the CryptoKitty that is the sire</li>
 </ul></li>
-<li><strong>Conceive as Sire</strong> - The CryptoKitty contributes to the pregnancy of a matron
+<li><em>Conceive as Sire</em> - The CryptoKitty contributes to the pregnancy of a matron
 <ul>
-<li><code>matronId</code> (xs:string) - the id of the CryptoKitty that is the matron</li>
+<li><code>matronId</code> (xs:string) - The id of the CryptoKitty that is the matron</li>
 </ul></li>
-<li><strong>Give Birth as Matron</strong> - The CryptoKitty becomes the matron of another CryptoKitty
+<li><em>Give Birth as Matron</em> - The CryptoKitty becomes the matron of another CryptoKitty
 <ul>
-<li><code>kittyId</code> (xs:string) - the id of the CryptoKitty that was born</li>
-<li><code>sireId</code> (xs:string) - the id of the CryptoKitty that is the sire</li>
+<li><code>kittyId</code> (xs:string) - The id of the CryptoKitty that was born</li>
+<li><code>sireId</code> (xs:string) - The id of the CryptoKitty that is the sire</li>
 </ul></li>
-<li><strong>Give Birth as Sire</strong> - The CryptoKitty becomes the sire of another CryptoKitty
+<li><em>Give Birth as Sire</em> - The CryptoKitty becomes the sire of another CryptoKitty
 <ul>
-<li><code>kittyId</code> (xs:string) - the id of the CryptoKitty that was born</li>
-<li><code>matronId</code> (xs:string) - the id of the CryptoKitty that is the matron</li>
+<li><code>kittyId</code> (xs:string) - The id of the CryptoKitty that was born</li>
+<li><code>matronId</code> (xs:string) - The id of the CryptoKitty that is the matron</li>
 </ul></li>
-<li><strong>Put Up for Sale Auction</strong> - The owner wants to sell the CryptoKitty
+<li><em>Put Up for Sale Auction</em> - The owner wants to sell the CryptoKitty
 <ul>
-<li><code>startingPrice</code> (xs:int) - the price (in wei) at the beginning of the auction</li>
-<li><code>endingPrice</code> (xs:int) - the price (in wei) at which the auction will end</li>
-<li><code>duration</code> (xs:int) - the duration for which the auction is running</li>
+<li><code>startingPrice</code> (xs:int) - The price (in wei) at the beginning of the auction</li>
+<li><code>endingPrice</code> (xs:int) - The price (in wei) at which the auction will end</li>
+<li><code>duration</code> (xs:int) - The duration for which the auction is running</li>
 </ul></li>
-<li><strong>Complete Sale Auction</strong> - The sale auction is successfully completed
+<li><em>Complete Sale Auction</em> - The sale auction is successfully completed
 <ul>
-<li><code>totalPrice</code> (xs:int) - the price paid for the CryptoKitty</li>
-<li><code>winner</code> (xs:string) - the new owner of the CryptoKitty</li>
+<li><code>totalPrice</code> (xs:int) - The price paid for the CryptoKitty</li>
+<li><code>winner</code> (xs:string) - The new owner of the CryptoKitty</li>
 </ul></li>
-<li><strong>Cancel Sale Auction</strong> - The sale auction is aborted</li>
-<li><strong>Put Up for Siring Auction</strong> - The owner offers his or her CryptoKitty for siring
+<li><em>Cancel Sale Auction</em> - The sale auction is aborted</li>
+<li><em>Put Up for Siring Auction</em> - The owner offers his or her CryptoKitty for siring
 <ul>
-<li><code>startingPrice</code> (xs:int) - the price (in wei) at the beginning of the auction</li>
-<li><code>endingPrice</code> (xs:int) - the price (in wei) at which the auction will end</li>
-<li><code>duration</code> (xs:int) - the duration for which the auction is running</li>
+<li><code>startingPrice</code> (xs:int) - The price (in wei) at the beginning of the auction</li>
+<li><code>endingPrice</code> (xs:int) - The price (in wei) at which the auction will end</li>
+<li><code>duration</code> (xs:int) - The duration for which the auction is running</li>
 </ul></li>
-<li><strong>Complete Siring Auction</strong> - The siring auction is successfully completed
+<li><em>Complete Siring Auction</em> - The siring auction is successfully completed
 <ul>
-<li><code>totalPrice</code> (xs:int) - the price paid for the CryptoKitty</li>
-<li><code>winner</code> (xs:string) - the owner of the matron who is looking for a sire</li>
+<li><code>totalPrice</code> (xs:int) - The price paid for the CryptoKitty</li>
+<li><code>winner</code> (xs:string) - The owner of the matron who is looking for a sire</li>
 </ul></li>
-<li><strong>Cancel Siring Auction</strong> - The siring auction is aborted</li>
-<li><strong>Is Transferred</strong> - The ownership of a CryptoKitty changes
+<li><em>Cancel Siring Auction</em> - The siring auction is aborted</li>
+<li><em>Is Transferred</em> - The ownership of a CryptoKitty changes
 <ul>
-<li><code>from</code> (xs:string) - the previous owner of the CryptoKitty</li>
-<li><code>to</code> (xs:string) - the new owner of the CryptoKitty</li>
+<li><code>from</code> (xs:string) - The previous owner of the CryptoKitty</li>
+<li><code>to</code> (xs:string) - The new owner of the CryptoKitty</li>
 </ul></li>
 </ul>
 </div>

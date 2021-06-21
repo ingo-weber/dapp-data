@@ -196,7 +196,7 @@ BLOCKS (5851509) (12243999) {
             log.logIndex as xs:int logIndex
         );
 		
-		EMIT XES EVENT (chickenHunt)(user)()(
+		EMIT XES EVENT (chickenHunt)(to)()(
             "Receive Shares" as xs:string concept:name,
 			from as xs:string seller,
 			value as xs:int shares,
