@@ -1,0 +1,233 @@
+// use connect to specify URL or Ipc
+// connect("ws://localhost:8546/");
+connectIpc("/data2/geth-archive/chaindata/geth.ipc");
+
+// use setOutputFolder to specify Folder
+setOutputFolder("./chickenhunt_output");
+
+string chickenHunt = "ChickenHunt";
+
+BLOCKS (5851509) (12243999) {
+
+    // Defined in ``ChickenHunt``
+    // Emitted in ``ChickenHunt.join()``
+	LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (Join(address user)){
+		EMIT XES TRACE (chickenHunt)(user)(
+            user as xs:string concept:name            
+        );
+		
+		EMIT XES EVENT (chickenHunt)(user)()(
+            "Join ChickenHunt" as xs:string concept:name,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHAltar``
+    // Emitted in ``CHAltar._resolveTradeBook()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (EthereumFromAltar(address indexed user, uint256 id, uint256 ethereum)){
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Receive Ethereum from Altar" as xs:string concept:name,
+			id as xs:int altarRecord,
+			ethereum as xs:int ethereum,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHAltar``
+    // Emitted in ``CHAltar.chickenToAltar()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (ChickenToAltar(address indexed user, uint256 id, uint256 chicken)){
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Bring Chicken to Altar" as xs:string concept:name,
+			id as xs:int altarRecord,
+			chicken as xs:int chicken,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHArena``
+    // Emitted in ``CHArena.attack()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (Attack(address indexed attacker, address indexed defender, uint256 booty)){
+        EMIT XES EVENT (chickenHunt)(attacker)()(
+            "Attack Hunter" as xs:string concept:name,
+			defender as xs:string defender,
+			booty as xs:int booty,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+		
+		EMIT XES EVENT (chickenHunt)(defender)()(
+            "Suffer an Attack" as xs:string concept:name,
+			attacker as xs:string attacker,
+			booty as xs:int booty,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHHouse``
+    // Emitted in ``CHHouse.buyItem()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (BuyItem(address indexed from, address indexed to, uint256 indexed id, uint256 cost)){
+        EMIT XES EVENT (chickenHunt)(to)()(
+            "Buy Item" as xs:string concept:name,
+			from as xs:string seller,
+			id as xs:int item,
+			cost as xs:int cost,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+		
+		EMIT XES EVENT (chickenHunt)(from)()(
+            "Sell Item" as xs:string concept:name,
+			to as xs:string buyer,
+			id as xs:int item,
+			cost as xs:int cost,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+	
+    // Defined in ``CHHunter``
+    // Emitted in ``CHHunter.upgradeStrength()``, ``CHHunter.upgradeDexterity()``, ``CHHunter.upgradeConstitution()``, and ``CHHunter.upgradeResistance()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (UpgradeHunter(address indexed user, string attribute, uint256 to)){
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Upgrade Hunter" as xs:string concept:name,
+			attribute as xs:string attribute,
+			to as xs:int amount,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+    
+    // Defined in ``CHHouse``
+    // Emitted in ``CHHouse.buyDepots()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (UpgradeDepot(address indexed user, uint256 to)){
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Upgrade Depot" as xs:string concept:name,
+			to as xs:int amount,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHHouse``
+    // Emitted in ``CHHouse.buyPets()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (UpgradePet(address indexed user, uint256 id, uint256 to)){
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Upgrade Pet" as xs:string concept:name,
+			id as xs:int pet,
+			to as xs:int amount,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``CHHouse``
+    // Emitted in ``CHHouse.buyStore()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (BuyStore(address indexed from, address indexed to, uint256 cost)) {
+        EMIT XES EVENT (chickenHunt)(to)()(
+            "Buy Store" as xs:string concept:name,
+			from as xs:string seller,
+			cost as xs:int cost,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+		
+		EMIT XES EVENT (chickenHunt)(from)()(
+            "Sell Store" as xs:string concept:name,
+			to as xs:string buyer,
+			cost as xs:int cost,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+	
+	// Defined in ``CHStock``
+    // Emitted in ``CHStock.redeemShares()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (RedeemShares(address indexed user, uint256 shares, uint256 dividends)) {
+        EMIT XES EVENT (chickenHunt)(user)()(
+            "Redeem Shares" as xs:string concept:name,
+			shares as xs:int shares,
+			dividends as xs:int dividends,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``ERC20Interface``
+    // Emitted in ``CHStock._giveShares()`` and ``CHStock._transfer()``
+    // Transfer of ether between two contracts
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (Transfer(address indexed from, address indexed to, uint256 value)) {
+        EMIT XES EVENT (chickenHunt)(from)()(
+            "Transfer Shares" as xs:string concept:name,
+			to as xs:string buyer,
+			value as xs:int shares,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+		
+		EMIT XES EVENT (chickenHunt)(user)()(
+            "Receive Shares" as xs:string concept:name,
+			from as xs:string seller,
+			value as xs:int shares,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+
+    // Defined in ``ERC20Interface``
+    // Emitted in ``CHStock.approve()``
+    LOG ENTRIES (0x1eD3d2c916cab00631cce4b08a7F880d4Badae94) (Approval(address indexed owner, address indexed spender, uint256 value)) {
+        EMIT XES EVENT (chickenHunt)(spender)()(
+            "Receive Shares Approval" as xs:string concept:name,
+			owner as xs:string owner,
+			value as xs:int shares,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+		
+		EMIT XES EVENT (chickenHunt)(owner)()(
+            "Provide Shares Approval" as xs:string concept:name,
+			spender as xs:string spender,
+			value as xs:int shares,
+            block.timestamp as xs:date time:timestamp,
+            block.number as xs:int blockNumber,
+            tx.transactionIndex as xs:int transactionIndex,
+            log.logIndex as xs:int logIndex
+        );
+    }
+}

@@ -1,27 +1,88 @@
 # ChickenHunt {#chickenhunt}
 
-- **DApp Homepage:** 
-- **DApp Source Code:** 
-- **ELF Script:** 
-- **Event Log:** 
-- **Process:** 
+- **DApp Homepage:** <https://chickenhunt.io/>
+- **DApp Source Code:** available on [etherscan.io](https://etherscan.io/address/0x1ed3d2c916cab00631cce4b08a7f880d4badae94?a=0xfcf0377c4f0f54cda15333eac0ba0d886fc40d0f#code)
+- **ELF Script:** [ChickenHunt.ethql](./elf-scripts/ChickenHunt.ethql)
+- **Event Log:** TODO
+
+ChickenHunt is an Ethereum-based game in which players can own and develop their character, a hunter.
+The hunters can hunt chicken or attack other hunters and this way collect chicken which can be converted into Ether.
+A hunter's abilities are determined by the consitution of the pets, items and depot that the hunter owns.
+To improve the hunter's abilities, players can upgrade items, pets, and depot.
+Through such investments, players also earn shares which they can cash out or transfer to other players and accounts.
+
 
 ## Data Overview
 
-### Process Notion
+Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game.
+Each trace has the following attributes:
 
-### Trace Attributes
+- ``concept:name`` (xs:string) - the address of the ChickenHunt player
 
-| Attribute | Type | Description |
-| --- | --- | --- |
+In addition, each event has a set of standard attributes:
 
+- ``concept:name`` (xs:string) - the class of the event
+- ``time:timestamp`` (xs:date) - the timestamp of the block that included the event
+- ``lifecycle:transition`` (xs:string) - the lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
+- ``blockNumber`` (xs:int) - the number of the block that included the event
+- ``transactionIndex`` (xs:int) - the index of the transaction that included the event ,
+- ``logIndex`` (xs:int) - the index of the log that included the event
 
-### Event Attributes
+The following events can occur during the a player's game: 
 
-| Attribute | Type | Description | Event Classes |
-| --- | --- | --- | --- |
-
+- *Join ChickenHunt* - The player joins the game
+- *Receive Ethereum from Altar* - The player receives Ethereum based on the number of chicken that her or she brought to the altar
+  - ``altarRecord`` (xs:int) - The period for which the Ethereum is paid out
+  - ``ethereum`` (xs:int) - The amount of Ether that the player receives
+- *Bring Chicken to Altar* - The player brings hunted chicken to the altar
+  - ``altarRecord`` (xs:int) - The period in which the chicken where brought to the altar
+  - ``chicken`` (xs:int) - The number of chicken
+- *Attack Hunter* - The player attacks another player to steal chicken
+  - ``defender`` (xs:string) - The player that gets attacked
+  - ``booty`` (xs:int) - The number of chicken that were stolen
+- *Suffer an Attack*  - The player must defend against an attack by another player
+  - ``attacker`` (xs:string) - The player that is attacking
+  - ``booty`` (xs:int) - The number of chicken that were lost to the attacker
+- *Buy Item* - The player purchases an item that improves his abilities
+  - ``seller`` (xs:string) - The account that sells the item
+  - ``item`` (xs:int) - The id of the item class that the player purchased
+  - ``cost`` (xs:int) - The amount paid for the item
+- *Sell Item* - The player sells an item
+  - ``buyer`` (xs:string) - The account that purchased the item
+  - ``item`` (xs:int) - The id of the item class that the player purchased
+  - ``cost`` (xs:int) - The amount paid for the item
+- *Upgrade Hunter* - The player improves the abilities of his or her hunter
+  - ``attribute`` (xs:string) - The attribute of the hunter that is improved
+  - ``amount`` (xs:int) - The amount by which the attribute is increased
+- *Upgrade Depot* - The player improves his or her depot
+  - ``amount`` (xs:int) - The amount by which the depot is increased
+- *Upgrade Pet* - The player improves the abilities of one of his or her pets
+  - ``pet`` (xs:int) - The index of the pet whose abilities are improved
+  - ``amount`` (xs:int) - The amount by which the pet's abilities are improved
+- *Buy Store* - The player buys a store from another player
+  - seller (xs:string) - The player who sells the store
+  - cost (xs:int) - The amount paid for the store
+- *Sell Store* - The player sells a store to another player
+  - buyer (xs:string) - The player who buys the store
+  - cost (xs:int) - The amount paid for the store
+- *Redeem Shares* - The player (or the game) cashes out shares
+  - ``shares`` (xs:int) - The shares that are cashed out
+  - ``dividends`` (xs:int) - The dividends received
+- *Transfer Shares* - The player (or the game) transfers shares to another player
+  - ``shares`` (xs:int) - The shares that are transferred
+  - ``buyer`` (xs:string) - The player that receives the shares
+- *Receive Shares* - The player receives shares from the game or another player
+  - ``shares`` (xs:int) - The shares that are received
+  - ``seller`` (xs:string) - The contract the pays out the shares
+- *Receive Shares Approval* - The player receives approval to spend shares of another account
+  - ``owner`` (xs:string) - The owner of the shares
+  - ``shares`` (xs:int) -  The shares that are approved for spending
+- *Provide Shares Approval* - The player allows another player to spend hhis or her shares
+  - ``spender`` (xs:string) - The nominated spender for the shares
+  - ``shares`` (xs:int) - The shares that are approved for spending
+  
 
 
 ## Preliminary Analysis
 
+TODO

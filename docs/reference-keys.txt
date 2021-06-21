@@ -12,7 +12,4 @@ data-overview-2
 preliminary-analysis-2
 chickenhunt
 data-overview-3
-process-notion-1
-trace-attributes-1
-event-attributes-1
 preliminary-analysis-3
