@@ -30,41 +30,41 @@ The following events can occur during the life of a Forsage user:
 - *Refer New User* - The user is referring a new user who created an account
   - ``user`` (xs:string) - The address of the new Forsage user
   - ``userId`` (xs:int) - The internal id of the new Forsage user
-- *Reinvest Matrix-1* - The user triggers a reinvest
+- *Reinvest Matrix-1* - The user triggers a reinvest in the first matrix
   - ``level`` (xs:int) - The level of the user
   - ``currentReferrer`` (xs:string) - The address of the referrer receiving reinvest. This is the users’s referrer, if it has activated the level receiving the reinvest, otherwise a randomly selected referrer.
   - ``caller`` (xs:string) - The address of user triggering the rein-
 vest
-- *Reinvest Matrix-2* - The user triggers a reinvest
+- *Reinvest Matrix-2* - The user triggers a reinvest in the second matrix
   - ``level`` (xs:int) - The level of the user
   - ``currentReferrer`` (xs:string) - The address of the referrer receiving reinvest. This is the user’s referrer, if this referrer has activated the level receiving the reinvest, otherwise a randomly selected referrer.
   - ``caller`` (xs:string) - The address of user triggering the reinvest
-- *Upgrade Matrix-1* - 
-  - ``level`` (xs:int) - 
-  - ``referrer`` (xs:string) -
-- *Upgrade Matrix-2* - 
-  - ``level`` (xs:int) - 
-  - ``referrer`` (xs:string) -
-- *New User-Place Matrix-1*
-  - ``referrer`` (xs:string) -
-  - ``level`` (xs:int) - 
-  - ``place`` (xs:int) -
-- *New User-Place Matrix-2*
-  - ``referrer`` (xs:string) -
-  - ``level`` (xs:int) - 
-  - ``place`` (xs:int) -
-- *Missed Eth-Receive Matrix-1* 
-  - ``from`` (xs:string) -
-  - ``level`` (xs:int) -
-- *Missed Eth-Receive Matrix-2* 
-  - ``from`` (xs:string) -
-  - ``level`` (xs:int) -
-- *Received Extra Eth-Dividends Matrix-1* 
-  - ``from`` (xs:string) -
-  - ``level`` (xs:int) -
-- *Recieved Extra Eth-Dividends Matrix-2* 
-  - ``from`` (xs:string) -
-  - ``level`` (xs:int) -
+- *Upgrade Matrix-1* - The user upgrades the first matrix
+  - ``level`` (xs:int) - The level of the matrix
+  - ``referrer`` (xs:string) - The address of the referrer
+- *Upgrade Matrix-2* - The user upgrades the first matrix
+  - ``level`` (xs:int) - The level of the matrix
+  - ``referrer`` (xs:string) - The address of the referrer
+- *New User-Place Matrix-1* - The user buys a matrix slot in the first matrix
+  - ``referrer`` (xs:string) - The address of the referrer
+  - ``level`` (xs:int) - The level of the matrix
+  - ``place`` (xs:int) - The slot in the matrix
+- *New User-Place Matrix-2* - The user buys a matrix slot in the second matrix
+  - ``referrer`` (xs:string) - The address of the referrer
+  - ``level`` (xs:int) - The level of the matrix
+  - ``place`` (xs:int) - The slot in the matrix
+- *Missed Eth-Receive Matrix-1* - The user did not receive Ether for the first matrix
+  - ``from`` (xs:string) - The address of the sender
+  - ``level`` (xs:int) - The level of the matrix
+- *Missed Eth-Receive Matrix-2* - The user did not receive Ether for the second matrix
+  - ``from`` (xs:string) - The address of the sender
+  - ``level`` (xs:int) - The level of the matrix
+- *Received Extra Eth-Dividends Matrix-1* - The user received Ether for the first matrix
+  - ``from`` (xs:string) - The address of the sender
+  - ``level`` (xs:int) - The level of the matrix
+- *Received Extra Eth-Dividends Matrix-2* - The user received Ether for the first matrix
+  - ``from`` (xs:string) - The address of the sender
+  - ``level`` (xs:int) - The level of the matrix
 
 ## Preliminary Analysis
 
