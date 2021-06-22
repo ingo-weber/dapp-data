@@ -2,7 +2,7 @@
 
 ## Datasets
 
-- [Augur](https://chrisklinkmueller.github.io/dapp-data/augur.html)
-- [Forsage](https://chrisklinkmueller.github.io/dapp-data/forsage.html)
-- [CryptoKitties](https://chrisklinkmueller.github.io/dapp-data/cryptokitties.html)
-- [ChickenHunt](https://chrisklinkmueller.github.io/dapp-data/chickenhunt.html)
+- [Augur](https://ingo-weber.github.io/dapp-data/augur.html)
+- [Forsage](https://ingo-weber.github.io/dapp-data/forsage.html)
+- [CryptoKitties](https://ingo-weber.github.io/dapp-data/cryptokitties.html)
+- [ChickenHunt](https://ingo-weber.github.io/dapp-data/chickenhunt.html)
