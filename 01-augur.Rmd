@@ -15,7 +15,7 @@ Each trace has the following attributes:
 
 - ``marketType`` (xs:string) - The type of the market: *yes/no-markets* deal with binary questions, while *categorical* and *scalar* markets expect discrete and numeric answers
 - ``description`` (xs:string) - A description of the bet or question that is asked
-- ``extraInfo`` (xs:string) - Additional informatio about the bet or question
+- ``extraInfo`` (xs:string) - Additional information about the bet or question
 - ``minPrice`` (xs:int) - The minimum price for the answer
 - ``maxPrice`` (xs:int) - The maximum price for the answer
 
@@ -23,13 +23,13 @@ In addition, each event has a set of standard attributes:
 
 - ``concept:name`` (xs:string) - The class of the event
 - ``time:timestamp`` (xs:date) - The timestamp of the block that included the event
-- ``lifecycle:transition`` (xs:string) - the lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
+- ``lifecycle:transition`` (xs:string) - The lifecycle transition of each event, for all events set to ``Completed`` by default. This attribute exists to ensure compatibility with [XES-certified tools](https://www.tf-pm.org/resources/xes-standard/for-vendors/certification)
 - ``blockNumber`` (xs:int) - The number of the block that included the event
 - ``requester`` (xs:string) - The address of the transaction sender
 - ``receivingContract`` (xs:string) - The address of the transaction recipient (typically of an Augur contract)
 - ``txIndex`` (xs:int) - The index of the transaction that included the event
 - ``txHash`` (xs:string) - The hash of the transaction that included the event
-- ``txSuccessful`` (xs;boolean) - A flag indicated whether the transaction was successfully executed
+- ``txSuccessful`` (xs:boolean) - A flag indicated whether the transaction was successfully executed
 - ``logRemoved`` (xs:boolean) - A flag indicated whether the log was removed
 - ``gas`` (xs:int) - The amount of gas set as the gas limit by the transaction requester
 - ``gasUsed`` (xs:int) - The amount of gas that was consumed by the transaction
@@ -84,7 +84,7 @@ The following events can occur during a market's lifetime:
 
 ## Preliminary Analysis
 
-We conducted a case study on process mining for data extracted from Augur in [1]. To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
+We conducted a case study on process mining for data extracted from Augur in [1]. To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview with the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
 
 **References**
 
