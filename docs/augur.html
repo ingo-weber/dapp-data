@@ -39,7 +39,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="forsage.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -134,7 +134,7 @@ Each trace has the following attributes:</p>
 <ul>
 <li><code>marketType</code> (xs:string) - The type of the market: <em>yes/no-markets</em> deal with binary questions, while <em>categorical</em> and <em>scalar</em> markets expect discrete and numeric answers</li>
 <li><code>description</code> (xs:string) - A description of the bet or question that is asked</li>
-<li><code>extraInfo</code> (xs:string) - Additional informatio about the bet or question</li>
+<li><code>extraInfo</code> (xs:string) - Additional information about the bet or question</li>
 <li><code>minPrice</code> (xs:int) - The minimum price for the answer</li>
 <li><code>maxPrice</code> (xs:int) - The maximum price for the answer</li>
 </ul>
@@ -142,13 +142,13 @@ Each trace has the following attributes:</p>
 <ul>
 <li><code>concept:name</code> (xs:string) - The class of the event</li>
 <li><code>time:timestamp</code> (xs:date) - The timestamp of the block that included the event</li>
-<li><code>lifecycle:transition</code> (xs:string) - the lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
+<li><code>lifecycle:transition</code> (xs:string) - The lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
 <li><code>blockNumber</code> (xs:int) - The number of the block that included the event</li>
 <li><code>requester</code> (xs:string) - The address of the transaction sender</li>
 <li><code>receivingContract</code> (xs:string) - The address of the transaction recipient (typically of an Augur contract)</li>
 <li><code>txIndex</code> (xs:int) - The index of the transaction that included the event</li>
 <li><code>txHash</code> (xs:string) - The hash of the transaction that included the event</li>
-<li><code>txSuccessful</code> (xs;boolean) - A flag indicated whether the transaction was successfully executed</li>
+<li><code>txSuccessful</code> (xs:boolean) - A flag indicated whether the transaction was successfully executed</li>
 <li><code>logRemoved</code> (xs:boolean) - A flag indicated whether the log was removed</li>
 <li><code>gas</code> (xs:int) - The amount of gas set as the gas limit by the transaction requester</li>
 <li><code>gasUsed</code> (xs:int) - The amount of gas that was consumed by the transaction</li>
@@ -224,7 +224,7 @@ Each trace has the following attributes:</p>
 </div>
 <div id="preliminary-analysis" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Preliminary Analysis</h2>
-<p>We conducted a case study on process mining for data extracted from Augur in [1]. To this end, we used process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development.</p>
+<p>We conducted a case study on process mining for data extracted from Augur in [1]. To this end, we used process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview with the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development.</p>
 <p><strong>References</strong></p>
 <p>[1] R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): “Process Mining on Blockchain Data: A Case Study of Augur”. In: International Conference on Business Process Management.</p>
 
