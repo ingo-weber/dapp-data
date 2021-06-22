@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Forsage | A Collection of DApp Event Logs</title>
+  <title>2 Forsage | A Collection of Resources for Process Mining on Blockchain Data</title>
   <meta name="description" content="This is a collection of public event logs from blockchain-based applications." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Forsage | A Collection of DApp Event Logs" />
+  <meta property="og:title" content="2 Forsage | A Collection of Resources for Process Mining on Blockchain Data" />
   <meta property="og:type" content="book" />
   
   
@@ -16,11 +16,19 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Forsage | A Collection of DApp Event Logs" />
+  <meta name="twitter:title" content="2 Forsage | A Collection of Resources for Process Mining on Blockchain Data" />
   
   <meta name="twitter:description" content="This is a collection of public event logs from blockchain-based applications." />
   
 
+<meta name="author" content="Dilum Bandara, CSIRO Data61" />
+<meta name="author" content="Hendrik Bockrath, TU Berlin" />
+<meta name="author" content="Richard Hobeck, TU Berlin" />
+<meta name="author" content="Christopher Klinkmüller, CSIRO Data61" />
+<meta name="author" content="Luise Pufahl, TU Berlin" />
+<meta name="author" content="Martin Rebesky, TU Berlin" />
+<meta name="author" content="Wil van der Aalst, RWTH Aachen" />
+<meta name="author" content="Ingo Weber, TU Berlin" />
 
 
 
@@ -68,7 +76,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Collection of DApp Event Logs</a></li>
+<li><a href="./">A Collection of Resources for Process Mining on Blockchain Data</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
@@ -101,7 +109,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of DApp Event Logs</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of Resources for Process Mining on Blockchain Data</a>
           </h1>
         </div>
 
@@ -117,13 +125,10 @@
 <li><strong>ELF Script:</strong> <a href="./elf-scripts/Forsage.ethql">Forsage.ethql</a></li>
 <li><strong>Event Log:</strong> TODO</li>
 </ul>
-<p>On their <a href="https://forsage.io">website</a>, the developers of Forsage discribe the DApp as a “Decentralized networking platform based on smart contracts that connects people from all over the world and opens up the limitless possibilities of the new economic financial system”.
-However, detailed analysis of the DApp’s mechanics, e.g., in [1], have shown that the DApp is in fact a Ponzi scheme, i.e., a fraud in which a few early investors generate profits based on the investments of later inverstors (see <a href="https://en.wikipedia.org/wiki/Ponzi_scheme">Wikipedia</a>).
-On <a href="https://etherscan.io/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97">etherscan.io</a> the DApp is currently marked as high risk with a note that this DApp is a Ponzi scheme.</p>
+<p>On their <a href="https://forsage.io">website</a>, the developers of Forsage describe the DApp as a “Decentralized networking platform based on smart contracts that connects people from all over the world and opens up the limitless possibilities of the new economic financial system”. However, detailed analyses of the DApp’s mechanics, e.g., in [1], have shown that the DApp is in fact a Ponzi scheme, i.e., a fraud in which a few early investors generate profits based on the investments of later inverstors (see <a href="https://en.wikipedia.org/wiki/Ponzi_scheme">Wikipedia</a>). On <a href="https://etherscan.io/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97">etherscan.io</a> the DApp is currently marked as high risk with a note that this DApp is a Ponzi scheme.</p>
 <div id="data-overview-1" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Data Overview</h2>
-<p>Each trace in the forsage log captures the events from the lifecycle of a Forsage user.
-Each trace has the following attributes:</p>
+<p>Each trace in the forsage log captures the events from the lifecycle of a Forsage user. Each trace has the following attributes:</p>
 <ul>
 <li><code>concept:name</code> (xs:string) - the address of the Forsage user</li>
 </ul>
@@ -207,9 +212,11 @@ vest</li>
 </div>
 <div id="preliminary-analysis-1" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Preliminary Analysis</h2>
-<p>An extensive evaluation of the publicly available Forsage source code was presented in [1] where Kell et al. deployed the Forsage smart contract in a test environment and excercised it with simulated load.
-In their analysis, Kell et al. examine the generated event logs in detail, amongst others using a state machine to visualise the behavior of the contract, resulting in an estimation that around 88% of the Forsage users loose their investment, while only a small number of top-level participants is realizing gains.
-Complementary to the analysis by Kell et al., we here provide the historic information about the behavior of Forsage users.</p>
+<p>Forsage is a pyramide and Ponzi scheme implemented in a set of Ethereum smart contracts. The basic building blocks of the ponzi scheme referral system are so called <em>matrizes</em>. Matrix slots that users (referrers) create can be taken by other users (referees) by paying a fee. Fees are transferred upstream through the reference system. The key events for selling or buying a matrix slot are <em>New User-Place Matrix-1</em> and <em>New User-Place Matrix-2</em>.</p>
+<p>The log has a size of ~6GB and contains 1,055,931 cases with 13,368,052 events. For the preliminary analysis, we hence only considered transactions between block 11280000 and 12243999 (934903 events, 72416 cases). Each case represents the trace of one registered user. The event log as-is specifies the referee’s ID for the  events; to see beneficiaries of those events, we reassigned the referrer’s IDs to matrix-slot events and thus slightly altered the case IDs. We also filtered for cases that start with registering in Forsage as a user.</p>
+<p><img src="figures/Forsage_DFG.png" /></p>
+<p>As a result, the above Figure shows two major findings for 37% of the cases. Firstly, 45% of the users only register (pay fees) without making any income. Secondly, in the short run users who upgrade their matrices (pay fees to referrers) right after registration have a lower number of references (payouts) than users who do not upgrade right after registration.</p>
+<p>For the same log extract, we also analyzed how often users are referred to and how often users are referees. Note that the income from being referred to is at most 0.025 ETH, while the cost of creating an event is usually 0.05 ETH. That means the ratio of being referee to being referrer should at least be 2 to break even. Of the 42738 unique user IDs only 5448 (12.7%) reached that goal, the rest of the observed users lost Ether. This observation is in line with the observations from Kell et al. [1]. In their analysis, Kell et al. deployed the Forsage smart contract in a test environment and excercised it with simulated load. By examining the generated event logs, Kell et al found that 88% of the Forsage users loose their investment, while only a small number of top-level participants is realizing gains.</p>
 <p><strong>References</strong></p>
 <p>[1] T. Kell, H. Yousaf, S. Allen, S. Meiklejohn and A. Juels (2021): “Forsage: Anatomy of a Smart-Contract Pyramid Scheme”. <a href="https://arxiv.org/abs/2105.04380" class="uri">https://arxiv.org/abs/2105.04380</a></p>
 

@@ -6,9 +6,7 @@
 - **Event Log:** [Augur.xes](./data/Augur.xes)
 - **Process:** [Augur.bpmn](./data/Augur.bpmn)
 
-Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain.
-Augur’s white paper characterizes the mechanics of a prediction and betting market: “individuals can speculate on the outcomes of future events; those who forecast the outcome correctly win money, and those who forecast incorrectly lose
-money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.
+Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain. Augur’s white paper characterizes the mechanics of a prediction and betting market: “individuals can speculate on the outcomes of future events; those who forecast the outcome correctly win money, and those who forecast incorrectly lose money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.
 
 ## Data Overview
 
@@ -50,10 +48,7 @@ The following events can occur during a market's lifetime:
 
 ## Preliminary Analysis
 
-We conducted a case study on process mining for data extracted from Augur in [1].  
-To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance  checking and performance analyses. 
-In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process.
-An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
+We conducted a case study on process mining for data extracted from Augur in [1]. To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
 
 **References**
 

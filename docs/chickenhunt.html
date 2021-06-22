@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 ChickenHunt | A Collection of DApp Event Logs</title>
+  <title>4 ChickenHunt | A Collection of Resources for Process Mining on Blockchain Data</title>
   <meta name="description" content="This is a collection of public event logs from blockchain-based applications." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 ChickenHunt | A Collection of DApp Event Logs" />
+  <meta property="og:title" content="4 ChickenHunt | A Collection of Resources for Process Mining on Blockchain Data" />
   <meta property="og:type" content="book" />
   
   
@@ -16,11 +16,19 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 ChickenHunt | A Collection of DApp Event Logs" />
+  <meta name="twitter:title" content="4 ChickenHunt | A Collection of Resources for Process Mining on Blockchain Data" />
   
   <meta name="twitter:description" content="This is a collection of public event logs from blockchain-based applications." />
   
 
+<meta name="author" content="Dilum Bandara, CSIRO Data61" />
+<meta name="author" content="Hendrik Bockrath, TU Berlin" />
+<meta name="author" content="Richard Hobeck, TU Berlin" />
+<meta name="author" content="Christopher Klinkmüller, CSIRO Data61" />
+<meta name="author" content="Luise Pufahl, TU Berlin" />
+<meta name="author" content="Martin Rebesky, TU Berlin" />
+<meta name="author" content="Wil van der Aalst, RWTH Aachen" />
+<meta name="author" content="Ingo Weber, TU Berlin" />
 
 
 
@@ -68,7 +76,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Collection of DApp Event Logs</a></li>
+<li><a href="./">A Collection of Resources for Process Mining on Blockchain Data</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
@@ -101,7 +109,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of DApp Event Logs</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of Resources for Process Mining on Blockchain Data</a>
           </h1>
         </div>
 
@@ -117,15 +125,11 @@
 <li><strong>ELF Script:</strong> <a href="./elf-scripts/ChickenHunt.ethql">ChickenHunt.ethql</a></li>
 <li><strong>Event Log:</strong> TODO</li>
 </ul>
-<p>ChickenHunt is an Ethereum-based game in which players can own and develop their character, a hunter.
-The hunters can hunt chicken or attack other hunters and this way collect chicken which can be converted into Ether.
-A hunter’s abilities are determined by the consitution of the pets, items and depot that the hunter owns.
-To improve the hunter’s abilities, players can upgrade items, pets, and depot.
-Through such investments, players also earn shares which they can cash out or transfer to other players and accounts.</p>
+<p>ChickenHunt is an incremental game that is deployed as a DApp on Ethereum. The game’s goal is to collect chickens through farming and attacking other players. Players also have the option to upgrade the attack (“Upgrade Hunter”), defense (“Upgrade Depot”), and collection capabilities (“Upgrade Pet”) of their avatars. The gas costs for the Ethereum transactions are paid by the player. The game concept includes two types of incentives for playing. Shareholder: through certain transactions, players can become shareholders of the game; and financial reward: players can sacrifice collected chickens for Ether.</p>
+<!-- ChickenHunt is an Ethereum-based game in which players can own and develop their character, a hunter. The hunters can hunt chicken or attack other hunters and this way collect chicken which can be converted into Ether. A hunter's abilities are determined by the consitution of the pets, items and depot that the hunter owns. To improve the hunter's abilities, players can upgrade items, pets, and depot. Through such investments, players also earn shares which they can cash out or transfer to other players and accounts. -->
 <div id="data-overview-3" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Data Overview</h2>
-<p>Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game.
-Each trace has the following attributes:</p>
+<p>Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game. Each trace has the following attributes:</p>
 <ul>
 <li><code>concept:name</code> (xs:string) - The address of the ChickenHunt player</li>
 </ul>
@@ -226,7 +230,12 @@ Each trace has the following attributes:</p>
 </div>
 <div id="preliminary-analysis-3" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Preliminary Analysis</h2>
-<p>TODO</p>
+<p>We have loaded the event log into several process mining tools to analyze the players’ behavior, but here focus on results obtained with <a href="https://www.promtools.org/">ProM</a>. In the figure below, the most common behavior of players is shown: 107 players out of the 715 cases join chicken hunt and never do anything else. Several frequent traces show players joining, and being attacked (one or more times) without doing anything else. Some players follow a similar pattern, but first they succeed with bringing chick-ens to the altar. These insights could help understand why players stop early, and be used by the developers when working on improvements. Players who are more actively playing the game have highly varied individual traces: 402 distinct traces exist for the 715 cases.</p>
+<p><img src="figures/CH_Traces.png" /></p>
+<p>In the directly follows graph shown below, we analyzed the order and frequency of the different types of upgrades. Upgrading the hunter avatar is clearly the most popular choice, and by far the most frequent first and last upgrade. In other words, active players may also upgrade their pet and their depot, but they typically come back to further upgrade their hunter. These insights, too, appear to be of value for the providers of such a game. Next, we direct our attention to attack behavior.</p>
+<p><img src="figures/CH_Upgrades.png" /></p>
+<p>The dotted chart below shows only the events from joining, attacking, and suffering from an attack. It can be observed that only few players attack others, but a large number of players are suffering from attacks. Additionally, the attacks appear to happen in synchronized waves, as indicated by the vertical patterns in the dotted chart. The reasons behind those waves may well be connected to the gas prices (and accordingly the fees) per transaction on Ethereum (see e.g., <a href="https://etherscan.io/chart/gasprice">etherscan</a>): from a visual comparison of the time lines, higher gas prices on Ethereum may well correlate with periods without attacks on ChickenHunt. Presumably the attackers stole chickens from ordinary users, brought them to the altar, and received Ether in return, all of which entailing transactions with associated fees. If the returns in Ether are not high enough, the fees may well render this operation a financial loss.</p>
+<p><img src="figures/CH_DottedChart.png" /></p>
 
 </div>
 </div>

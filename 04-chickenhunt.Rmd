@@ -5,17 +5,14 @@
 - **ELF Script:** [ChickenHunt.ethql](./elf-scripts/ChickenHunt.ethql)
 - **Event Log:** TODO
 
-ChickenHunt is an Ethereum-based game in which players can own and develop their character, a hunter.
-The hunters can hunt chicken or attack other hunters and this way collect chicken which can be converted into Ether.
-A hunter's abilities are determined by the consitution of the pets, items and depot that the hunter owns.
-To improve the hunter's abilities, players can upgrade items, pets, and depot.
-Through such investments, players also earn shares which they can cash out or transfer to other players and accounts.
+ChickenHunt is an incremental game that is deployed as a DApp on Ethereum. The game’s goal is to collect chickens through farming and attacking other players. Players also have the option to upgrade the attack (“Upgrade  Hunter”), defense (“Upgrade Depot”), and collection capabilities (“Upgrade Pet”) of their avatars. The gas costs for the Ethereum transactions are paid by the player. The game concept includes two types of incentives for playing. Shareholder: through certain transactions, players can become shareholders of the game; and financial reward: players can sacrifice collected chickens for Ether.
+
+<!-- ChickenHunt is an Ethereum-based game in which players can own and develop their character, a hunter. The hunters can hunt chicken or attack other hunters and this way collect chicken which can be converted into Ether. A hunter's abilities are determined by the consitution of the pets, items and depot that the hunter owns. To improve the hunter's abilities, players can upgrade items, pets, and depot. Through such investments, players also earn shares which they can cash out or transfer to other players and accounts. -->
 
 
 ## Data Overview
 
-Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game.
-Each trace has the following attributes:
+Each trace in the ChickenHunt log captures the events that occur during the game of a ChickenHunt player, i.e., the actions that a ChickenHunt player takes or is part of when playing the game. Each trace has the following attributes:
 
 - ``concept:name`` (xs:string) - The address of the ChickenHunt player
 
@@ -85,4 +82,14 @@ The following events can occur during the a player's game:
 
 ## Preliminary Analysis
 
-TODO
+We have loaded the event log into several process mining tools to analyze the players’ behavior, but here focus on results obtained with [ProM](https://www.promtools.org/). In the figure below, the most common behavior of players is shown: 107 players out of the 715 cases join chicken hunt and never do anything else. Several frequent traces show players joining, and being attacked (one or more times) without doing anything else. Some players follow a similar pattern, but first they succeed with bringing chick-ens to the altar. These insights could help understand why players stop early, and be used by the developers when working on improvements. Players who are more actively playing the game have highly varied individual traces: 402 distinct traces exist for the 715 cases. 
+
+![](./figures/CH_Traces.png)
+
+In the directly follows graph shown below, we analyzed the order and frequency of the different types of upgrades. Upgrading the hunter avatar  is clearly the most popular choice, and by far the most frequent first and last upgrade. In other words, active players may also upgrade their pet and their depot, but they typically come back to further upgrade their hunter. These insights, too, appear to be of value for the providers of such a game. Next, we direct our attention to attack behavior. 
+
+![](./figures/CH_Upgrades.png)
+
+The dotted chart below shows only the events from joining, attacking, and suffering from an attack. It can be observed that only few players attack others, but a large number of players are suffering from attacks. Additionally, the attacks appear to happen in synchronized waves, as indicated by the vertical patterns in the dotted chart. The reasons behind those waves may well be connected to the gas prices (and accordingly the fees) per transaction on Ethereum (see e.g., [etherscan](https://etherscan.io/chart/gasprice)): from a visual comparison of the time lines, higher gas prices on Ethereum may well correlate with periods without attacks on ChickenHunt. Presumably the attackers stole chickens from ordinary users, brought them to the altar, and received Ether in return, all of which entailing transactions with associated fees. If the returns in Ether are not high enough, the fees may well render this operation a financial loss.
+
+![](./figures/CH_DottedChart.png)

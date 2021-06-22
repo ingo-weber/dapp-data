@@ -1,5 +1,14 @@
 --- 
-title: "A Collection of DApp Event Logs"
+title: "A Collection of Resources for Process Mining on Blockchain Data"
+author: 
+  - Dilum Bandara, CSIRO Data61
+  - Hendrik Bockrath, TU Berlin
+  - Richard Hobeck, TU Berlin
+  - Christopher Klinkmüller, CSIRO Data61
+  - Luise Pufahl, TU Berlin
+  - Martin Rebesky, TU Berlin
+  - Wil van der Aalst, RWTH Aachen
+  - Ingo Weber, TU Berlin
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -11,20 +20,18 @@ description: "This is a collection of public event logs from blockchain-based ap
 
 # Overview {-}
 
-This is a repository of event logs of *decentralized applications* (DApps) deployed on public blockchain networks. 
-The event logs contain historic information about events that occurred during the execution of the DApps.
-Currently, the collection contains logs for the following Ethereum-based DApps:
+This is a repository of event logs of *decentralized applications* (DApps) deployed on public blockchain networks. The event logs contain historic information about events that occurred during the execution of the DApps. Currently, the collection contains logs for the following Ethereum-based DApps:
 
 - [Augur](#augur): a prediction and betting marketplace;
 - [Forsage](#forsage): an investment application, which turns out to be a PONZI scheme;
 - [CryptoKitties](#cryptokitties): a game where virtual cats can be bred and traded as assets; and
 - [ChickenHunt](#chickenhunt): a game for hunting chickens.
 
-All event logs from this collection follow the [IEEE XES standard](https://www.tf-pm.org/resources/xes-standard/about-xes) and were extracted using the [Ethereum Logging Framework](https://github.com/ChrisKlinkmueller/Ethereum-Logging-Framework/) (ELF).
-In addition to the event log data, this website provides a description of the data in the event logs, pointers to DApp documentations, links to ELF scripts used for data extraction, and insights obtained from a preliminary analyses for each DApp event log.
+All event logs from this collection follow the [IEEE XES standard](https://www.tf-pm.org/resources/xes-standard/about-xes) and were extracted using the [Ethereum Logging Framework](https://github.com/ChrisKlinkmueller/Ethereum-Logging-Framework/) (ELF). In addition to the event log data, this website provides a description of the data in the event logs, pointers to DApp documentations, links to ELF scripts used for data extraction, and insights obtained from a preliminary analyses for each DApp event log.
 
-This collection is part of our work on process mining for blockchain-based applications.
-Details can be found in the following publications:
+We invite users to contribute their own data sets to this collection. Data sets can be contributed via pull requests to our [github repository](https://github.com/ingo-weber/dapp-data).
+
+This collection is part of our work on process mining for blockchain-based applications. Details can be found in the following publications:
 
 - C. Klinkmüller, A. Ponomarev, A.B. Tran, I. Weber, W. van der Aalst (2019): "Mining blockchain processes: Extracting process mining data from blockchain applications". In: International Conference on Business Process Management (Blockchain Forum).
 - C. Klinkmüller, I. Weber, A. Ponomarev, A.B. Tran, W. van der Aalst (2019): "Efficient logging for blockchain application".  <https://arxiv.org/abs/2001.10281>

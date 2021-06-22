@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">A Collection of DApp Event Logs</a></li>
+        <li><a href="./">A Collection of Resources for Process Mining on Blockchain Data</a></li>
 #    download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
