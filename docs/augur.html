@@ -132,13 +132,11 @@
 <p>Each trace in the Augur log captures the events that occur in relation to a specific betting market.
 Each trace has the following attributes:</p>
 <ul>
-<li><code>marketType</code> (xs:string) -</li>
-<li><code>description</code> (xs:string) -</li>
-<li><code>minPrice</code> (xs:int) -</li>
-<li><code>maxPrice</code> (xs:int) -</li>
-<li><code>blockNumber</code> (xs:int) -</li>
-<li><code>time:timestamp</code> (xs:date) -</li>
-<li><code>extraInfo</code> (xs:string) -</li>
+<li><code>marketType</code> (xs:string) - The type of the market: <em>yes/no-markets</em> deal with binary questions, while <em>categorical</em> and <em>scalar</em> markets expect discrete and numeric answers</li>
+<li><code>description</code> (xs:string) - A description of the bet or question that is asked</li>
+<li><code>extraInfo</code> (xs:string) - Additional informatio about the bet or question</li>
+<li><code>minPrice</code> (xs:int) - The minimum price for the answer</li>
+<li><code>maxPrice</code> (xs:int) - The maximum price for the answer</li>
 </ul>
 <p>In addition, each event has a set of standard attributes:</p>
 <ul>
@@ -146,24 +144,82 @@ Each trace has the following attributes:</p>
 <li><code>time:timestamp</code> (xs:date) - The timestamp of the block that included the event</li>
 <li><code>lifecycle:transition</code> (xs:string) - the lifecycle transition of each event, for all events set to <code>Completed</code> by default. This attribute exists to ensure compatibility with <a href="https://www.tf-pm.org/resources/xes-standard/for-vendors/certification">XES-certified tools</a></li>
 <li><code>blockNumber</code> (xs:int) - The number of the block that included the event</li>
+<li><code>requester</code> (xs:string) - The address of the transaction sender</li>
+<li><code>receivingContract</code> (xs:string) - The address of the transaction recipient (typically of an Augur contract)</li>
 <li><code>txIndex</code> (xs:int) - The index of the transaction that included the event</li>
-<li><code>logIndex</code> (xs:int) - The index of the log that included the event</li>
+<li><code>txHash</code> (xs:string) - The hash of the transaction that included the event</li>
+<li><code>txSuccessful</code> (xs;boolean) - A flag indicated whether the transaction was successfully executed</li>
+<li><code>logRemoved</code> (xs:boolean) - A flag indicated whether the log was removed</li>
+<li><code>gas</code> (xs:int) - The amount of gas set as the gas limit by the transaction requester</li>
 <li><code>gasUsed</code> (xs:int) - The amount of gas that was consumed by the transaction</li>
 <li><code>gasPaid</code> (xs:int) - The amount of Ether that was paid for the execution of the transaction</li>
+<li><code>gasPrice</code> (xs:int) - The gas price set by the transaction sender</li>
+<li><code>universe</code> (xs:string) - The address of the Augur instance in which the event occurred</li>
 </ul>
 <p>The following events can occur during a market’s lifetime:</p>
 <ul>
-<li><em>create market</em> -</li>
-<li><em>purchase complete sets</em> -</li>
-<li><em>submit initial report</em> -</li>
-<li><em>create dispute</em> -</li>
-<li><em>contribute to dispute</em> -</li>
-<li><em>redeem dispute crowdsourcer</em> -</li>
-<li><em>complete dispute</em> -</li>
-<li><em>finalize market</em> -</li>
-<li><em>claim trading proceeds</em> -</li>
-<li><em>redeem as initial reporter</em> -</li>
-<li><em>transfer market</em> -</li>
+<li><em>create market</em> - The betting market is initialized
+<ul>
+<li><code>creator</code> (xs:string) - The address of the market creator</li>
+<li><code>creationFee</code> (xs:int) - The price paid for the creation of the market</li>
+</ul></li>
+<li><em>submit initial report</em> - An initial answer for the betting market is submitted
+<ul>
+<li><code>reporter</code> (xs:string) - The address of the reporter providing the answer</li>
+<li><code>amountStaked</code> (xs:int) - The amount of reputation token owned by the reporter</li>
+<li><code>isDesignatedReporter</code> (xs:boolean) - A flag indicating whether the reporter was the initally assigned reporter</li>
+<li><code>invalid</code> (xs:boolean) - A flag indicating whether the answer was flagged as INVALID by the reporter</li>
+</ul></li>
+<li><em>purchase complete sets</em> - A user invests in an anticipated answer
+<ul>
+<li><code>account</code> (xs:string) - The address of the user who buys shares</li>
+<li><code>numCompleteSets</code> (xs:int) - The number of shares that are bought</li>
+</ul></li>
+<li><em>create dispute</em> - A discussion about a provided answer is started
+<ul>
+<li><code>disputeCrowdsourcer</code> (xs:string) - The address of the user who creates the dispute</li>
+<li><code>size</code> (xs:int) - The amount of reputation token owned by the reporter</li>
+<li><code>invalid</code> (xs:boolean) - A flag indicating whether the answer was flagged as INVALID by the reporter</li>
+</ul></li>
+<li><em>contribute to dispute</em> - A user adds to a discussion about a provided answer
+<ul>
+<li><code>reporter</code> (xs:string) - The address of the user who contributes to the answer</li>
+<li><code>disputeCrowdsourcer</code> (xs:string) - The address of the user who is targeted in the dispute</li>
+<li><code>amountStaked</code> (xs:int) - The amount of staked reputation</li>
+</ul></li>
+<li><em>redeem dispute crowdsourcer</em> - A user tries to obtain his or her revenue from the dispute
+<ul>
+<li><code>reporter</code> (xs:string) - The address of the user</li>
+<li><code>disputeCrowdsourcer</code> (xs:string) - The address of the user initiating the transaction</li>
+<li><code>amountRedeemed</code> (xs:int) - The amount of redeemed Ether</li>
+<li><code>repReceived</code> (xs:int) - The amount of received reputation</li>
+<li><code>reportingFeesReceived</code> (xs:int) - The amount of received reporting fees</li>
+</ul></li>
+<li><em>complete dispute</em> - A discussion about a provided answer is closed
+<ul>
+<li><code>disputeCrowdsourcer</code> as xs:string disputeCrowdsourcer,</li>
+</ul></li>
+<li><em>finalize market</em> - The betting market is closed</li>
+<li><em>claim trading proceeds</em> - A user tries to obtain his or her revenue from the investment into an answer
+<ul>
+<li><code>shareToken</code> (xs:string) - The address of the share token</li>
+<li><code>sender</code> (xs:string) - The address of the user</li>
+<li><code>numShares</code> (xs:int) - The number of claimed shares</li>
+<li><code>numPayoutTokens</code> (xs:int) - The number of shares that the user owns</li>
+<li><code>finalTokenBalance</code> (xs:int) - The share balance of the user after the update</li>
+</ul></li>
+<li><em>redeem as initial reporter</em> - A user tries to obtain his or her revenue for providing the initial answer
+<ul>
+<li><code>reporter</code> (xs:string) - The address of the reporter</li>
+<li><code>amountRedeemed</code> (xs:int) - The amount of redeemed Ether</li>
+<li><code>repReceived</code> (xs:int) - The amount of redeemed Reputation</li>
+<li><code>reportingFeesReceived</code> (xs:int) - The amount of redeemed reporting fees</li>
+</ul></li>
+<li><em>transfer market</em> - The betting market is transferred from one to another user
+<ul>
+<li><code>from</code> (xs:string) - The address of the previous market owner</li>
+<li><code>to</code> (xs:string) - The address of the new market owner</li>
+</ul></li>
 </ul>
 </div>
 <div id="preliminary-analysis" class="section level2" number="1.2">
