@@ -33,6 +33,7 @@ We invite users to contribute their own data sets to this collection. Data sets 
 
 This collection is part of our work on process mining for blockchain-based applications. Details can be found in the following publications:
 
+- H.M.N.D. Bandara, H. Bockrath, R. Hobeck, C. Klinkmüller, L. Pufahl, M. Rebesky, W. Van der Aalst and I. Weber (2021): "Event Logs of Ethereum-Based Applications: A Collection of Resources for Process Mining on Blockchain Data". In: International Conference on Business Process Management.
 - C. Klinkmüller, A. Ponomarev, A.B. Tran, I. Weber, W. van der Aalst (2019): "Mining blockchain processes: Extracting process mining data from blockchain applications". In: International Conference on Business Process Management (Blockchain Forum).
 - C. Klinkmüller, I. Weber, A. Ponomarev, A.B. Tran, W. van der Aalst (2019): "Efficient logging for blockchain application".  <https://arxiv.org/abs/2001.10281>
 - R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): "Process Mining on Blockchain Data: A Case Study of Augur". In: International Conference on Business Process Management.
