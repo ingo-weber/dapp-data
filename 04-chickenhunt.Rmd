@@ -3,7 +3,7 @@
 - **DApp Homepage:** <https://chickenhunt.io/>
 - **DApp Source Code:** available on [etherscan.io](https://etherscan.io/address/0x1ed3d2c916cab00631cce4b08a7f880d4badae94?a=0xfcf0377c4f0f54cda15333eac0ba0d886fc40d0f#code)
 - **ELF Script:** [ChickenHunt.ethql](./elf-scripts/ChickenHunt.ethql)
-- **Event Log:** [Final_ChickenHunt.xes.gz](https://github.com/ingo-weber/dapp-data/raw/master/data/Final_ChickenHunt.xes.gz)
+- **Event Log:** [Final_ChickenHunt.xes.gz](https://github.com/ingo-weber/dapp-data/blob/master/data/Final_ChickenHunt.xes.gz?raw=true)
 
 ChickenHunt is an incremental game that is deployed as a DApp on Ethereum. The game’s goal is to collect chickens through farming and attacking other players. Players also have the option to upgrade the attack (“Upgrade  Hunter”), defense (“Upgrade Depot”), and collection capabilities (“Upgrade Pet”) of their avatars. The gas costs for the Ethereum transactions are paid by the player. The game concept includes two types of incentives for playing. Shareholder: through certain transactions, players can become shareholders of the game; and financial reward: players can sacrifice collected chickens for Ether.
 

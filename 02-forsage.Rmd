@@ -3,7 +3,7 @@
 - **DApp Homepage:** <https://forsage.io>
 - **DApp Source Code:** available on [etherscan.io](https://etherscan.io/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97#code)
 - **ELF Script:** [Forsage.ethql](./elf-scripts/Forsage.ethql)
-- **Event Log:** [Final_Forsage.xes.gz](https://github.com/ingo-weber/dapp-data/raw/master/data/Final_Forsage.xes.gz)
+- **Event Log:** [Final_Forsage.xes.gz](https://github.com/ingo-weber/dapp-data/blob/master/data/Final_Forsage.xes.gz?raw=true)
 
 On their [website](https://forsage.io), the developers of Forsage describe the DApp as a "Decentralized networking platform based on smart contracts that connects people from all over the world and opens up the limitless possibilities of the new economic financial system". However, detailed analyses of the DApp's mechanics, e.g., in [1], have shown that the DApp is in fact a Ponzi scheme, i.e., a fraud in which a few early investors generate profits based on the investments of later investors (see [Wikipedia](https://en.wikipedia.org/wiki/Ponzi_scheme)). On [etherscan.io](https://etherscan.io/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97) the DApp is currently marked as high risk with a note that this DApp is a Ponzi scheme.
 
