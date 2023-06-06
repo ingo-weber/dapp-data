@@ -5,6 +5,7 @@
 - **ELF Script:** [Augur.ethql](./elf-scripts/Augur.ethql)
 - **Event Log:** [Augur.xes](./data/Augur.xes)
 - **Process:** [Augur.bpmn](./data/Augur.bpmn)
+- **Object-centric Event Log:** [Augur.csv](https://tubcloud.tu-berlin.de/s/zyytGgrxx6j6ocY)
 
 Augur is a betting platform and prediction marketplace that is implemented as a set of smart contracts on the public Ethereum blockchain. Augur’s white paper characterizes the mechanics of a prediction and betting market: “individuals can speculate on the outcomes of future events; those who forecast the outcome correctly win money, and those who forecast incorrectly lose money.” As a betting market organized on Ethereum, the developers claim that Augur bypasses disadvantages of traditional betting markets, such as trusted market operator and limited participation.
 
