@@ -85,8 +85,23 @@ The following events can occur during a market's lifetime:
 
 ## Preliminary Analysis
 
-We conducted a case study on process mining for data extracted from Augur in [1]. To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. In this regard, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. An interview with the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
+We conducted a case study on process mining for data extracted from Augur in [1, 2]. To  this  end,  we  used  process mining methods and tools to explore the data, discover models for a set of variants, and conduct conformance checking and performance analyses. 
+
+![](./figures/fig-dfg-unfiltered.png)
+
+The dotted chart shows different time intervals of increased activity and activity batches that were triggered within a short time frame.
+
+![](./figures/fig-dotted-chart.png)
+
+Using conformance checking, we found that the implementation diverged from the documented architecture of the DApp and identified interesting deviations from the normative process. 
+
+![](./figures/fig-subprocess-conf.png)
+
+An interview with the chief architect of Augur validated our insights and more generally confirmed the usefulness of such insights for DApp development. 
 
 **References**
 
-[1] R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. Van der Aalst (2021): “Process Mining on Blockchain Data: A Case Study of Augur”. In: International Conference on Business Process Management.
+[1] R. Hobeck, C. Klinkmüller, H.M.N.D. Bandara, I. Weber and W. van der Aalst (2021): “Process Mining on Blockchain Data: A Case Study of Augur”. In: International Conference on Business Process Management.
+
+[2] R. Hobeck, C. Klinkmüller, D. HMN Bandara, I. Weber and W. van der Aalst (2024): "On the Suitability of Process Mining for
+Enhancing Transparency of Blockchain Applications". Bus Inf Syst Eng.

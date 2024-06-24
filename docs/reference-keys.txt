@@ -10,3 +10,8 @@ preliminary-analysis-2
 chickenhunt
 data-overview-3
 preliminary-analysis-3
+fig:unnamed-chunk-1
+fig:pdf-figure
+fig:pdf-figure-1
+fig:pdf-figure-2
+fig:pdf-figure-3
