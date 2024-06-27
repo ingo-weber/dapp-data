@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Collection of Resources for Process Mining on Blockchain Data</title>
   <meta name="description" content="This is a collection of public event logs from blockchain-based applications." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Collection of Resources for Process Mining on Blockchain Data" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a collection of public event logs from blockchain-based applications." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -22,13 +21,13 @@
   
 
 <meta name="author" content="Dilum Bandara, CSIRO Data61" />
-<meta name="author" content="Hendrik Bockrath, TU Berlin" />
+<meta name="author" content="Hendrik Bockrath" />
 <meta name="author" content="Richard Hobeck, TU Berlin" />
-<meta name="author" content="Christopher Klinkmüller, CSIRO Data61" />
-<meta name="author" content="Luise Pufahl, TU Berlin" />
-<meta name="author" content="Martin Rebesky, TU Berlin" />
+<meta name="author" content="Christopher Klinkmüller, BPMotion" />
+<meta name="author" content="Luise Pufahl, TU Munich" />
+<meta name="author" content="Martin Rebesky" />
 <meta name="author" content="Wil van der Aalst, RWTH Aachen" />
-<meta name="author" content="Ingo Weber, TU Berlin" />
+<meta name="author" content="Ingo Weber, TU Munich" />
 
 
 
@@ -39,8 +38,8 @@
   
 
 <link rel="next" href="augur.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -56,12 +55,16 @@
 
 
 
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
-
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -120,16 +123,16 @@
 <div id="header">
 <h1 class="title">A Collection of Resources for Process Mining on Blockchain Data</h1>
 <p class="author"><em>Dilum Bandara, CSIRO Data61</em></p>
-<p class="author"><em>Hendrik Bockrath, TU Berlin</em></p>
+<p class="author"><em>Hendrik Bockrath</em></p>
 <p class="author"><em>Richard Hobeck, TU Berlin</em></p>
-<p class="author"><em>Christopher Klinkmüller, CSIRO Data61</em></p>
-<p class="author"><em>Luise Pufahl, TU Berlin</em></p>
-<p class="author"><em>Martin Rebesky, TU Berlin</em></p>
+<p class="author"><em>Christopher Klinkmüller, BPMotion</em></p>
+<p class="author"><em>Luise Pufahl, TU Munich</em></p>
+<p class="author"><em>Martin Rebesky</em></p>
 <p class="author"><em>Wil van der Aalst, RWTH Aachen</em></p>
-<p class="author"><em>Ingo Weber, TU Berlin</em></p>
+<p class="author"><em>Ingo Weber, TU Munich</em></p>
 </div>
-<div id="overview" class="section level1 unnumbered">
-<h1>Overview</h1>
+<div id="overview" class="section level1 unnumbered hasAnchor">
+<h1>Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This is a repository of event logs of <em>decentralized applications</em> (DApps) deployed on public blockchain networks. The event logs contain historic information about events that occurred during the execution of the DApps. Currently, the collection contains logs for the following Ethereum-based DApps:</p>
 <ul>
 <li><a href="augur.html#augur">Augur</a>: a prediction and betting marketplace;</li>
@@ -159,7 +162,6 @@
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -199,6 +201,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

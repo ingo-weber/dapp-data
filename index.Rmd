@@ -2,13 +2,13 @@
 title: "A Collection of Resources for Process Mining on Blockchain Data"
 author: 
   - Dilum Bandara, CSIRO Data61
-  - Hendrik Bockrath, TU Berlin
+  - Hendrik Bockrath
   - Richard Hobeck, TU Berlin
-  - Christopher Klinkmüller, CSIRO Data61
-  - Luise Pufahl, TU Berlin
-  - Martin Rebesky, TU Berlin
+  - Christopher Klinkmüller, BPMotion
+  - Luise Pufahl, TU Munich
+  - Martin Rebesky
   - Wil van der Aalst, RWTH Aachen
-  - Ingo Weber, TU Berlin
+  - Ingo Weber, TU Munich
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
